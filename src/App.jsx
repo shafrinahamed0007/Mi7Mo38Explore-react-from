@@ -2,6 +2,7 @@ import "./App.css";
 import ControlledFiled from "./components/ControlledField/ControlledFiled";
 import FormAction from "./components/FormAction/FormAction";
 import SimpleForm from "./components/SimpleForm/SimpleForm";
+import UnControlledField from "./components/UnControlledField/UnControlledField";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <FormAction />
       <br />
       <ControlledFiled />
+      <br />
+      <UnControlledField />
     </>
   );
 }
