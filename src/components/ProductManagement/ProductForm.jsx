@@ -1,4 +1,7 @@
-const ProductForm = () => {
+import { useState } from "react";
+
+const ProductForm = ({ handleAddProduct }) => {
+  const [error, setError] = useState("");
   const handleProductSubmit = (e) => {
     e.preventDefault();
     // console.log(e.target);
@@ -9,12 +12,29 @@ const ProductForm = () => {
     // console.log("Name:", name, "Price: ", price, "Quantity: ", quantity );
 
     const newProduct = {
-        name, 
-        price,
-        quantity
-    }
+      name,
+      price,
+      quantity,
+    };
 
-    console.log(newProduct)
+    // console.log(newProduct)
+
+    // validation
+    if (name.length == 0) {
+      setError("Please provide a product name");
+      return;
+    } else if (price.length == 0) {
+      setError("Please provide a Price");
+      return;
+    } else if (price < 0) {
+      setError("Price can not be negative");
+      return;
+    } else if (quantity == 0 || quantity < 0) {
+      setError("Quantity must be 1");
+      return;
+    } else {
+      setError("");
+    }
   };
   return (
     <div>
@@ -28,6 +48,7 @@ const ProductForm = () => {
         <br />
         <input type="submit" value="Submit" />
       </form>
+      <p style={{ color: "red" }}>{error}</p>
     </div>
   );
 };
