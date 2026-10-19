@@ -35,6 +35,9 @@ const ProductForm = ({ handleAddProduct }) => {
     } else {
       setError("");
     }
+  
+      handleAddProduct(newProduct);
+    
   };
   return (
     <div>
