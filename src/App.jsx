@@ -2,6 +2,7 @@ import "./App.css";
 import ControlledFiled from "./components/ControlledField/ControlledFiled";
 import FormAction from "./components/FormAction/FormAction";
 import HookForm from "./components/HookForm/HookForm";
+import ProductManagement from "./components/ProductManagement/ProductManagement";
 import SimpleForm from "./components/SimpleForm/SimpleForm";
 import UnControlledField from "./components/UnControlledField/UnControlledField";
 
@@ -18,6 +19,8 @@ function App() {
       <UnControlledField />
       <br />
       <HookForm />
+      <br />
+      <ProductManagement />
     </>
   );
 }
