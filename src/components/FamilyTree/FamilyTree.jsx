@@ -1,11 +1,17 @@
 import Grandpa from "./Grandpa";
 import "./FamilyTree.css";
+import { createContext } from "react";
 
+export const AssetContext = createContext("");
 const FamilyTree = () => {
+  const asset = "diamond";
+  const newAsset  = "Gold"
   return (
     <div className="family-tree">
       <h2>Family Tree</h2>
-      <Grandpa />
+      <AssetContext.Provider value={newAsset}>
+        <Grandpa asset={asset} />
+      </AssetContext.Provider>
     </div>
   );
 };
